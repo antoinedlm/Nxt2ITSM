@@ -8,9 +8,9 @@ The purpose of this package is to provide a connector between Nexthink engines a
 
 # Table of Content
 
-- [Requirements](# Requirements)
+- [Requirements](#-Requirements)
 - [Usage](#-usage)
-- [Installation](# Installation)
+- [Installation](#-Installation)
     - [Online Installation](###-for-an-online-installation:)
     - [Offline Installation](###-for-an-offline-installation:)
 - [Configuration](#-configuration)

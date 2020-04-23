@@ -15,7 +15,7 @@ The purpose of this package is to provide a connector between Nexthink engines a
     - [Offline Installation](#offline-installation)
 - [Configuration](#configuration)
     - [_.env_ file](#env-file)
-    - [_properties.json_ file](#properties.json-file)
+    - [_properties.json_ file](#propertiesjson-file)
     - [Score files](#score-files)
     - [Certificates](#certificates)
 - [Running the application](#running-the-application)
@@ -87,7 +87,7 @@ TODO
 The configuration of the application is done by doing checking the following:
 
 - [_.env_ file](#env-file)
-- [_properties.json_ file](#properties.json-file)
+- [_properties.json_ file](#propertiesjson-file)
 - [Score files](#score-files)
 - [Certificates](#certificates)
 

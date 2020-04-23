@@ -1,0 +1,6 @@
+mixin document(documentObject, payload)
+    - var divName = 'doc__'.concat(documentObject.name)
+    .col-12.docsection(name=divName)= documentObject.name
+        .col-12.docheader= documentObject.header
+        each section in documentObject.sections
+            +section(section, payload)

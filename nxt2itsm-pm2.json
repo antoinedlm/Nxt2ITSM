@@ -1,0 +1,9 @@
+{
+    "name": "nxt2itsm",
+    "script": "app.js",
+    "cwd": "/home/nexthink/node_modules/nxt2itsm",
+    "watch": true,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "out_file": "/home/nexthink/node_modules/nxt2itsm/nxt2itsm-out.log",
+    "error_file": "/home/nexthink/node_modules/nxt2itsm/nxt2itsm-error.log"
+}

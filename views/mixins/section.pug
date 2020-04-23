@@ -1,0 +1,18 @@
+mixin section(sectionObject)
+    if sectionObject.title
+        .col-12.sectiontitle= sectionObject.title
+    each element in sectionObject.content
+        if element.type === 'Description'
+            .col-12.description= element.content
+        else if element.type === 'HTTP'
+            .col-12.link
+                .col-1.linkicon
+                    img.linkimg(src='/images/link-symbol.png')
+                .col-11.linkname
+                    a.linkname(href=element.content.url target='_blank')= element.content.text
+        else if element.type === 'RemoteAction'
+            .col-12.actremote(device_uid=payload['device_uid'] remote_uid=element.content.UID)
+                .col-1.acticon
+                    img.actimg(src='/images/nexthink-act.png')
+                .col-11.actname
+                    span= element.content.name

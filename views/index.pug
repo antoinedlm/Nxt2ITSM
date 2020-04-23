@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageName}
+        link(rel="stylesheet", href="/css/index.css")
+        link(rel='shortcut icon' type='image/x-icon' href='/images/favicon.png')
+        script(src='/scripts/jquery-3.4.1.js')
+        script(src='/scripts/deviceSearch.js')
+    body
+        .col-12.doc-page-section.row
+            p The integration can used in two different ways:
+            ul
+                li Displaying all scores by using 
+                    b https://#{hostname}/device/device_name
+                li Displaying a specific score by using 
+                    b https://#{hostname}/score/score_Id/device_name
+            p Replace the device_name with an actual name of a device reporting to a Nexthink Engine.
+            p Find below the id to score mapping:
+            .col-12.row
+                .col-2
+                .col-10
+                    table.score
+                        tr
+                            th Score ID
+                            th Xml Name
+                        each score, index in scores
+                            tr
+                                td= index
+                                td= score
+            .col-12
+                p You can search for devices using the box below:
+                input.col-5(id='myInput' name='searchBox')
+                button.button(type='text' name='search') Search
+            .col-5
+                ul(id="devicesList")

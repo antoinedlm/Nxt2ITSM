@@ -1,0 +1,17 @@
+mixin compositeScore(score, mainScoreName, compositeName, payload)
+    - var divName = 'score__'.concat(score.name)
+    if (score.isMain || score.isParentMain)
+        - var compName = score.name
+    else
+        - var compName = compositeName.concat(' - ', score.name)
+    
+    if score.hasLeaf
+        if score.hasDoc
+            .col-12.composite.canSelect(name=divName)= compName
+        else
+            .col-12.composite(name=divName)= compName
+    each child in score.childs
+        if child.type === 'leaf'
+            +leafScore(child, mainScoreName, payload)
+        else
+            +compositeScore(child, mainScoreName, compName, payload)

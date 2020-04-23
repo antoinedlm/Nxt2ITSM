@@ -1,0 +1,22 @@
+{
+    "entity": [
+        "Entity",
+        "string"
+    ],
+    "last_system_boot": [
+        "Last Boot",
+        "datetime"
+    ],
+    "cpu_model": [
+        "CPU",
+        "string"
+    ],
+    "total_ram": [
+        "Ram",
+        "byte"
+    ],
+    "mac_addresses": [
+        "MAC addresses",
+        "mac_address"
+    ]
+}

@@ -1,0 +1,17 @@
+mixin leafScore(score, mainScoreName, contentPayload)
+    - var index = 'score:'.concat(mainScoreName, '/', score.name)
+    - var indexPayload = 'score:'.concat(mainScoreName, '/', score.name, '/payload')
+    - var divName = 'score__'.concat(score.name)
+    if score.hasDoc
+        .col-12.line.canSelect(name=divName)
+            .col-3.scorevalue(class=contentPayload[index][1])= contentPayload[index][0]
+            .col-4.leaf= score.name
+            .col-5.payload.tooltip= contentPayload[indexPayload]
+                span.tooltiptext= score.description
+    else
+        .col-12.line(name=divName)
+            .col-3.scorevalue(class=contentPayload[index][1])= contentPayload[index][0]
+            .col-4.leaf= score.name
+            .col-5.payload.tooltip
+                p= contentPayload[indexPayload]
+                span.tooltiptext= score.description

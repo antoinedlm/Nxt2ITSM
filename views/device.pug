@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+include mixins/compositeScore
+include mixins/leafScore
+include mixins/scoresMenu
+include mixins/properties
+include mixins/document
+include mixins/section
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Device - #{deviceName}
+        link(rel="stylesheet", href="/css/scoreview.css")
+        link(rel='shortcut icon' type='image/x-icon' href='/images/favicon.png')
+        script(src='/scripts/jquery-3.4.1.js')
+        script(src='/scripts/nxtscripts.js')
+    body
+        header
+            if config.app.finder
+                .col-5
+                    .col-1
+                    .col-11
+                        - var url = 'nxt://Show-NxSource?Name='.concat(deviceName, '&Host=', config.api.portal, '&Port=443&EngineName=', engine)
+                        a.finder(href=url) Nexthink Finder
+            +scoresMenu(scores)
+        +propertiesTab(config.properties, payload)
+        each score in scores
+            - var contentName = 'content__'.concat(score.scoreContent.name)
+            .col-12.row.content(name=contentName)
+                .col-7.scorepane(name='score')
+                    +compositeScore(score.scoreContent, score.scoreContent.name, '', payload)
+                .col-5.docpane(name='document')
+                    each doc in score.document
+                        +document(doc, payload)
+            
+                

@@ -1,0 +1,9 @@
+mixin propertiesTab(propertiesObject, payloadObject)
+    .col-12.row.content(name='content__Properties')
+        .col-7.scorepane
+            each prop, index in propertiesObject
+                if index !== 'device_uid'
+                    .col-12.properties
+                        .col-4.leaf= prop[0]
+                        .col-8.properties
+                            p= payloadObject[index]

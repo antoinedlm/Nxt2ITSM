@@ -1,0 +1,8 @@
+mixin scoresMenu(scores)
+    .col-12.row.scoremenu
+        .col-menu.scoreitem(name='menu__Properties')
+            span Properties
+        each score in scores
+            - var menuName = 'menu__' + score.scoreContent.name;
+            .col-menu.scoreitem(name=menuName)
+                span= score.scoreContent.name

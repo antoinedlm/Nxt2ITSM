@@ -1,0 +1,172 @@
+/* Organize the page as a multi-column grid */
+/* The number of columns inside a row should always add up to 12 (to have 100%) */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* Make each column float left with a padding*/
+[class*="col-"] {
+    float: left;
+    padding: 2px;
+}
+
+.row {
+    min-width: 15rem;
+}
+
+/* To clear the flow */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Define generic style (box-sizing to include margin and padding in total height and width of elements) */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: white;
+    font-family: Calibri,sans-serif,Arial;
+}
+
+/* Define specific style of the documentation page https://hostname/ */
+.doc-page-section {
+    color: #1046A8;
+    min-width: 150px;
+    text-align: left;
+    padding: 2px 2px 2px 10px;
+}
+
+/* Define specific style of the score table*/
+.score,
+.score th,
+.score td {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.score,
+.score td {
+    background-color: #e4e4ee;
+    color: #63676E;
+}
+
+.score th,
+.score td {
+	padding: 5px 10px 5px 5px;
+}
+
+.score {
+    display: inline-block;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.score th{
+    background-color: #1046A8;
+    color: #ffffff;
+}
+
+/* Style of the search box and the results */
+#myInput {
+  background-image: url('/images/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  margin-right: 5px;
+  width: 300px;
+}
+
+#devicesList {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#devicesList li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#devicesList li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: #1046A8;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.button:active {
+  background-color: #1046A8;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+
+
+/* Define specific style of the settings.json table*/
+.settings {
+    background-color: #e4e4ee;
+    border-collapse:collapse;
+    border-radius: 5px;
+	color: #63676E;
+	font-weight: bold;
+	font-size: 15px;
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #63676E;
+}
+
+.settings th{
+    background-color: #1046A8;
+	color: #ffffff;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+	font-size: 15px;
+    text-align: left;
+}
+
+.settings td{
+    background-color: #e4e4ee;
+	color: #63676E;
+	padding: 5px 5px 5px 5px;
+	font-weight: bold;
+	border-bottom: 1px solid #63676E;
+	font-size: 15px;
+    text-align: left;
+}
+

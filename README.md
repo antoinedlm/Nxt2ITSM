@@ -1,6 +1,6 @@
 # nxt2itsm
 
-Nexthink score to ITSM solutions (reworked with Arie Joose and Alain Bernard)
+Nexthink score to ITSM solutions (reworked)
 
 Displays Nexthink scores per device in HTML.
 

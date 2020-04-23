@@ -1,6 +1,6 @@
 # nxt2itsm
 
-Nexthink score to ITSM solutions (reworked with Arie Joose and Alain Bernard)
+Nexthink score to ITSM solutions (reworked)
 
 Displays Nexthink scores per device in HTML.
 
@@ -8,9 +8,9 @@ The purpose of this package is to provide a connector between Nexthink engines a
 
 # Table of Content
 
-- [Requirements](#-Requirements)
-- [Usage](#-usage)
-- [Installation](#-Installation)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Installation](#installation)
     - [Online Installation](###-for-an-online-installation:)
     - [Offline Installation](###-for-an-offline-installation:)
 - [Configuration](#-configuration)

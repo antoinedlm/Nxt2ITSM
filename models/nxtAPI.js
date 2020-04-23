@@ -161,18 +161,18 @@ parseDevices = async (promises) => {
             for (index in responses) {
                 var host = url.parse(responses[index].config.baseURL).hostname;
                 console.log('Status code:', responses[index].status);
-                if (responses[index].status === '200') {
+                if (responses[index].status == '200') {
                     var jsonContent = responses[index].data;
                     for (device in jsonContent) {
                         var name = jsonContent[device].name.toLowerCase();
                         devices[name] = host;
                     };
                     console.log('Parsing of devices for Engine:', host, 'done');
-                } else if (responses[index].status === '400') {
+                } else if (responses[index].status == '400') {
                     console.error('Error getting devices on Engine:', host, 'Bad Request');
-                } else if (responses[index].status === '401') {
+                } else if (responses[index].status == '401') {
                     console.error('Error getting devices on Engine:', host, 'Not Authorized');
-                } else if (responses[index].status === '403') {
+                } else if (responses[index].status == '403') {
                     console.error('Error getting devices on Engine:', host, 'Forbidden');
                 } else {
                     console.error('Error getting devices on Engine:', host, 'Status code:', responses[index].status);

@@ -11,13 +11,13 @@ The purpose of this package is to provide a connector between Nexthink engines a
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Installation](#installation)
-    - [Online Installation](###online-installation)
-    - [Offline Installation](###offline-installation)
+    - [Online Installation](#online-installation)
+    - [Offline Installation](#offline-installation)
 - [Configuration](#configuration)
-    - [_.env_ file](#####env-file)
-    - [_properties.json_ file](#####properties.json-file)
-    - [Score files](#####score-files)
-    - [Certificates](#####certificates)
+    - [_.env_ file](#env-file)
+    - [_properties.json_ file](#properties.json-file)
+    - [Score files](#score-files)
+    - [Certificates](#certificates)
 - [Running the application](#running-the-application)
 
 # Requirements
@@ -86,10 +86,10 @@ TODO
 
 The configuration of the application is done by doing checking the following:
 
-- [_.env_ file](#####env-file)
-- [_properties.json_ file](#####properties.json-file)
-- [Score files](#####score-files)
-- [Certificates](#####certificates)
+- [_.env_ file](#env-file)
+- [_properties.json_ file](#properties.json-file)
+- [Score files](#score-files)
+- [Certificates](#certificates)
 
 ##### env file
 

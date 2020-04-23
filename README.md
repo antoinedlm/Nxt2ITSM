@@ -8,17 +8,17 @@ The purpose of this package is to provide a connector between Nexthink engines a
 
 # Table of Content
 
-- [Requirements](#-requirements)
-- [Usage](#-usage)
-- [Installation](#-installation)
-    - [Online Installation](###-for-an-online-installation:)
-    - [Offline Installation](###-for-an-offline-installation:)
-- [Configuration](#-configuration)
-    - [_.env_ file](#####-.env-file)
-    - [_properties.json_ file](#####-properties.json-file)
-    - [Score files](#####-score-files)
-    - [Certificates](#####-certificates)
-- [Running the application](#-running-the-application)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Installation](#installation)
+    - [Online Installation](###online-installation)
+    - [Offline Installation](###offline-installation)
+- [Configuration](#configuration)
+    - [_.env_ file](#####env-file)
+    - [_properties.json_ file](#####properties.json-file)
+    - [Score files](#####score-files)
+    - [Certificates](#####certificates)
+- [Running the application](#running-the-application)
 
 # Requirements
 
@@ -56,7 +56,7 @@ If you are not familiar with CentOS firewalls, switch it off:
 sudo systemctl disable firewalld
 sudo systemctl stop firewalld
 ```
-### For an online installation:
+### Online installation
 
 This guide admit that the installation from the /home/nexthink folder. If you are not in this folfder, move in it with the following command:
 ```
@@ -78,7 +78,7 @@ sudo systemctl start pm2-root
 ```
 The solution is now installed in /home/nexthink/node_modules/nxt2itsm. Go to the configuration section for the next steps.
 
-### For an offline installation:
+### Offline installation
 
 TODO
 
@@ -86,12 +86,12 @@ TODO
 
 The configuration of the application is done by doing checking the following:
 
-- [_.env_ file](#####-.env-file)
-- [_properties.json_ file](#####-properties.json-file)
-- [Score files](#####-score-files)
-- [Certificates](#####-certificates)
+- [_.env_ file](#####env-file)
+- [_properties.json_ file](#####properties.json-file)
+- [Score files](#####score-files)
+- [Certificates](#####certificates)
 
-##### .env file
+##### env file
 
 The _.env_ contains a set of variables to ensure the application has all the necessary information to run correctly. The .env file provided is empty by default, but the application won't run if it isn't filled.
 

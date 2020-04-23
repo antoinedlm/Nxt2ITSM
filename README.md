@@ -69,7 +69,7 @@ sudo yum install git -y
 Install pm2 and also download the different files from the git repository:
 ```
 sudo npm -g install pm2
-npm install jeromewyss/nxt2itsm-saml-auth
+npm install jeromewyss/nxt2itsm-no-auth
 ```
 Make sure pm2 will autostart after a reboot and start it now:
 ```

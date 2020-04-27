@@ -9,7 +9,7 @@ exports.transform = (payload, format) => {
     if (format === 'datetime') {
         return payload.replace('T', ' @ ');
     } else if (format === 'mac_address') {
-        return payload.replace(',', ' , ');
+        return payload.toString().split(',').join(' , ');
     } else {
         var temp = parseFloat(payload);
         switch (format) {

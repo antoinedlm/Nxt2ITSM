@@ -40,9 +40,9 @@ module.exports = class section {
                 };
                 elements.push(element);
             } else if (arrayJson[index].name === 'RemoteAction') {
-                if (arrayJson[index].attributes.name) {
+                if (arrayJson[index].attributes.Name) {
                     var ra = {
-                        name: arrayJson[index].attributes.name,
+                        name: arrayJson[index].attributes.Name,
                         UID: arrayJson[index].attributes.UID
                     };
                 } else {

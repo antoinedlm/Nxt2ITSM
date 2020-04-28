@@ -11,7 +11,7 @@ mixin section(sectionObject)
                 .col-11.linkname
                     a.linkname(href=element.content.url target='_blank')= element.content.text
         else if element.type === 'RemoteAction'
-            .col-12.actremote(device_uid=payload['device_uid'] remote_uid=element.content.name)
+            .col-12.actremote(device_uid=payload['device_uid'] remote_uid=element.content.UID)
                 .col-1.acticon
                     img.actimg(src='/images/nexthink-act.png')
                 .col-11.actname

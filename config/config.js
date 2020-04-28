@@ -13,6 +13,12 @@ exports.app = {
     finder: process.env.FINDER || true
 };
 
+if (fs.existsSync(path.join(utils.rootDir, 'ssl', process.env.CA_BUNDLE))) {
+    var CA_content = fs.readFileSync(path.join(utils.rootDir, 'ssl', process.env.CA_BUNDLE));
+} else {
+    var CA_content = ''
+};
+
 // ssl configuration. File to be placed in the ssl/ folder
 exports.ssl = {
     certName: process.env.CERT_NAME,
@@ -20,7 +26,7 @@ exports.ssl = {
     keyName: process.env.KEY_NAME,
     keyContent: fs.readFileSync(path.join(utils.rootDir, 'ssl', process.env.KEY_NAME)),
     caBundleName: process.env.CA_BUNDLE || '',
-    caContent: fs.readFileSync(path.join(utils.rootDir, 'ssl', process.env.CA_BUNDLE)) || ''
+    caContent: CA_content
 };
 
 // Information for Portal API query and NXQL queries

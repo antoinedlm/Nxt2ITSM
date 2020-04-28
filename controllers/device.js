@@ -16,7 +16,7 @@ const parseScores = () => {
     scoresList = fs.readdirSync(scoresPath, { encoding: 'utf-8' });
     scoresContent = {};
     for (index in scoresList) {
-        if (path.extname(scoresList[index]) === 'xml') {
+        if (path.extname(scoresList[index]) === '.xml') {
             var currentScore = new Score(path.join(scoresPath, scoresList[index]));
             scoresContent[currentScore.name] = currentScore;
         };

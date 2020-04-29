@@ -26,10 +26,10 @@ html(lang="en")
             +scoresMenu(scores)
         +propertiesTab(config.properties, payload)
         each score in scores
-            - var contentName = 'content__'.concat(score.scoreContent.name)
+            - var contentName = 'content__'.concat(score.name)
             .col-12.row.content(name=contentName)
                 .col-7.scorepane(name='score')
-                    +compositeScore(score.scoreContent, score.scoreContent.name, '', payload)
+                    +compositeScore(score.scoreContent, score.name, '', payload)
                 .col-5.docpane(name='document')
                     each doc in score.document
                         +document(doc, payload)

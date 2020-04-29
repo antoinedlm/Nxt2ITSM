@@ -3,6 +3,6 @@ mixin scoresMenu(scores)
         .col-menu.scoreitem(name='menu__Properties')
             span Properties
         each score in scores
-            - var menuName = 'menu__' + score.scoreContent.name;
+            - var menuName = 'menu__' + score.name;
             .col-menu.scoreitem(name=menuName)
-                span= score.scoreContent.name
+                span= score.name

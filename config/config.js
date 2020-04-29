@@ -13,7 +13,7 @@ exports.app = {
     finder: process.env.FINDER || true
 };
 
-if (fs.existsSync(path.join(utils.rootDir, 'ssl', process.env.CA_BUNDLE))) {
+if (process.env.CA_BUNDLE) {
     var CA_content = fs.readFileSync(path.join(utils.rootDir, 'ssl', process.env.CA_BUNDLE));
 } else {
     var CA_content = ''

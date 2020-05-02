@@ -55,16 +55,19 @@ module.exports = class scoreDef {
 
         var folder = path.join(utils.rootDir, 'scores', 'json');
 
-        fs.mkdir(
-            folder,
-            (err) => {
-                if (err) {
-                    return console.error(err);
-                }
-            });
+        if (!fs.existsSync(folder)) {
+            fs.mkdir(
+                folder,
+                (err) => {
+                    if (err) {
+                        return console.error(err);
+                    }
+                });
+        }
         fs.writeFile(
             path.join(folder, parsedContent.elements[0].attributes.Name.concat('.json')),
             parsedContent.elements[0],
+            { encoding: 'utf8', flag: 'w' },
             (err) => {
                 if (err) {
                     return console.error(err);

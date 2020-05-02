@@ -104,9 +104,24 @@ The _properties.json_ file contains the list of properties that are displayed in
     "nxql_field_type"
 ]
 ```
+If you wish to add dynamic field (category, remote action results), the format should be:
+```
+"#'dynamic field'": [
+    "display_name",
+    "enum"
+]
+```
+
 __name_of_nxql_field__ is the name of the field in the nxql datamodel
 __display_name__ is what will be displayed in the application for this field
 __nxql_field_type__ is the type of the field in the nxql datamodel
+__dynamic field__ is the name of the dynamic field
+
+To find the right format for a __dynamic fields__, use the nxql editor and run the following query:
+```
+(select #"" (from device))
+```
+The query will results in error and the editor will propose you the list of availables dynamic fields.
 
 You can only use the __device's fields__ from the [NXQL data model](https://doc.nexthink.com/Documentation/Nexthink/latest/APIAndIntegrations/NXQLDataModel#device).
 

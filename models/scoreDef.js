@@ -66,7 +66,7 @@ module.exports = class scoreDef {
         }
         fs.writeFile(
             path.join(folder, parsedContent.elements[0].attributes.Name.concat('.json')),
-            parsedContent.elements[0],
+            JSON.stringify(parsedContent.elements[0]),
             { encoding: 'utf8', flag: 'w' },
             (err) => {
                 if (err) {

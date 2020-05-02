@@ -11,6 +11,7 @@ module.exports = class compositeScore {
         this._description = jsonComposite.attributes.Description;
         this._isMain = mainBool;
         this._isParentMain = parentMainBool;
+        this._isVisible = this.checkVisibility(jsonComposite.attributes);
         this._childs = this.getChildren(jsonComposite.elements);
         this._hasLeaf = this.checkLeaf(jsonComposite.elements);
         this._hasDoc = this.checkDocument(jsonComposite.elements);
@@ -45,12 +46,28 @@ module.exports = class compositeScore {
         return this._isParentMain;
     };
 
+    get isVisible() {
+        return this._isVisible;
+    };
+
     get hasLeaf() {
         return this._hasLeaf;
     };
 
     get hasDoc() {
         return this._hasDoc;
+    };
+
+    checkVisibility(attribJson) {
+        if (attribJson.Visibility) {
+            if (attribJson.Visibility === 'visible') {
+                return true;
+            } else {
+                return false;
+            };
+        } else {
+            return true;
+        };
     };
 
     getChildren(arrayJson) {

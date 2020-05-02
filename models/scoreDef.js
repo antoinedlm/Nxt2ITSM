@@ -118,12 +118,14 @@ module.exports = class scoreDef {
     getCompositeString(scoreObject, stringArray) {
         var currentSelection;
         var scoreArray = [];
-        for (index in scoreObject.childs) {
-            currentSelection = scoreObject.childs[index];
-            if (currentSelection.type === 'leaf') {
-                scoreArray.push(this.getLeafString(stringArray, currentSelection.name));
-            } else {
-                scoreArray = scoreArray.concat(this.getCompositeString(currentSelection, stringArray));
+        if (scoreObject.isVisible) {
+            for (index in scoreObject.childs) {
+                currentSelection = scoreObject.childs[index];
+                if (currentSelection.type === 'leaf' && currentSelection.isVisible) {
+                    scoreArray.push(this.getLeafString(stringArray, currentSelection.name));
+                } else {
+                    scoreArray = scoreArray.concat(this.getCompositeString(currentSelection, stringArray));
+                };
             };
         };
 

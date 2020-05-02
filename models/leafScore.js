@@ -9,6 +9,7 @@ module.exports = class leafScore {
         this._name = jsonLeaf.attributes.Name;
         this._type = 'leaf';
         this._description = jsonLeaf.attributes.Description;
+        this._isVisible = this.checkVisibility(jsonLeaf.attributes);
         this._format = this.getFormat(jsonLeaf.elements);
         this._normalization = this.parseNormalization(jsonLeaf.elements);
         this._hasDoc = this.checkDocument(jsonLeaf.elements);
@@ -41,6 +42,22 @@ module.exports = class leafScore {
 
     get normalization() {
         return this._normalization;
+    };
+
+    get isVisible() {
+        return this._isVisible;
+    };
+
+    checkVisibility(attribJson) {
+        if (attribJson.Visibility) {
+            if (attribJson.Visibility === 'visible') {
+                return true;
+            } else {
+                return false;
+            };
+        } else {
+            return true;
+        };
     };
 
     getFormat(arrayJson) {

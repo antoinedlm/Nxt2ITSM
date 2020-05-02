@@ -84,6 +84,17 @@ exports.runNXQL = (deviceName, scoreFields, engineAddress) => {
     var format = '&format=json';
     var nxqlQuery = '/2/query?platform=windows&query='.concat(encodeURIComponent(selectStatement), format);
 
+    var fileName = path.join(utils.rootDir, 'nxql_query_debug.txt');
+    fs.writeFile(
+        fileName,
+        selectStatement,
+        { encoding: 'utf8', flag: 'w' },
+        (err) => {
+            if (err) {
+                return console.error(err);
+            }
+        });
+
     return GetHttps(engineAddress, config.api.nxqlPort, nxqlQuery);
 };
 

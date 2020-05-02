@@ -13,13 +13,14 @@ var devicesList = {};
 
 const parseScores = () => {
     console.log('Parsing scores...');
-    scoresList = fs.readdirSync(scoresPath, { encoding: 'utf-8' });
+    var allFiles = fs.readdirSync(scoresPath, { encoding: 'utf-8' });
+    scoresList = allFiles.filter((file) => {
+        return path.extname(file).toLowerCase() === '.xml';
+    });
     scoresContent = {};
     for (index in scoresList) {
-        if (path.extname(scoresList[index]) === '.xml') {
-            var currentScore = new Score(path.join(scoresPath, scoresList[index]));
-            scoresContent[currentScore.name] = currentScore;
-        };
+        var currentScore = new Score(path.join(scoresPath, scoresList[index]));
+        scoresContent[currentScore.name] = currentScore;
     };
 };
 

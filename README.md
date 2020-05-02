@@ -112,10 +112,10 @@ If you wish to add dynamic field (category, remote action results), the format s
 ]
 ```
 
-__name_of_nxql_field__ is the name of the field in the nxql datamodel
-__display_name__ is what will be displayed in the application for this field
-__nxql_field_type__ is the type of the field in the nxql datamodel
-__dynamic field__ is the name of the dynamic field
+- __name_of_nxql_field__ is the name of the field in the nxql datamodel
+- __display_name__ is what will be displayed in the application for this field
+- __nxql_field_type__ is the type of the field in the nxql datamodel
+- __dynamic field__ is the name of the dynamic field
 
 To find the right format for a __dynamic fields__, use the nxql editor and run the following query:
 ```

@@ -97,7 +97,7 @@ exports.parseResults = (jsonResults, scores, normObject, propObject) => {
 
         if (isScore) {
             var scoreName = key.substring(
-                key.lastIndexOf(":") + 1,
+                key.indexOf(":") + 1,
                 key.indexOf("/")
             );
             if (hasValue(value) && isPayload) {

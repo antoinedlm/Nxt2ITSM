@@ -24,7 +24,7 @@ html(lang="en")
                         - var url = 'nxt://Show-NxSource?Name='.concat(deviceName, '&Host=', config.api.portal, '&Port=443&EngineName=', engine)
                         a.finder(href=url) Nexthink Finder
             +scoresMenu(scores)
-        +propertiesTab(config.properties, payload)
+        +propertiesTab(properties, payload)
         each score in scores
             - var contentName = 'content__'.concat(score.name)
             .col-12.row.content(name=contentName)

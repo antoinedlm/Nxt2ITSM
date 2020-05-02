@@ -24,6 +24,24 @@ config.properties = Object.assign({
 
 var propertiesFields = Object.keys(config.properties).join(' ');
 
+exports.convertedProp = () => {
+    var convertedProp = {};
+    Object.entries(config.properties).forEach(pair => {
+        var key = pair[0];
+        var value = pair[1];
+        if (key.includes('#')) {
+            var new_key = key.substring(
+                key.indexOf("'") + 1,
+                key.lastIndexOf("'")
+            );
+            convertedProp[new_key] = value;
+        } else {
+            convertedProp[key] = value;
+        };
+    });
+    return convertedProp;
+};
+
 exports.callActAPI = (remoteUid, deviceUid) => {
     var data = {
         RemoteActionUid: remoteUid,
@@ -113,10 +131,10 @@ exports.parseResults = (jsonResults, scores, normObject, propObject) => {
             );
             if (hasValue(value) && isPayload) {
                 parsedResults[key] = normObject[key].applyNorm(value);
-                console.log('CONVERTED:\t', key, 'value\n\t\t', value, 'to:', parsedResults[key]);
+                console.log('CONVERTED:\t', value, '\tto:', parsedResults[key]);
             } else if (isPayload) {
                 parsedResults[key] = '-';
-                console.log('CONVERTED:\t', key, 'value\n\t\t', value, 'to:', parsedResults[key]);
+                console.log('CONVERTED:\t', value, '\tto:', parsedResults[key]);
             } else if (hasValue(value) && Number.isInteger(+value)) {
                 var numValue = +value;
                 parsedResults[key] = [numValue, scores[scoreName].calcColor(value)];
@@ -128,7 +146,7 @@ exports.parseResults = (jsonResults, scores, normObject, propObject) => {
             };
         } else {
             parsedResults[key] = utils.transform(value, propObject[key][1]);
-            console.log('CONVERTED:\t', key, 'value\n\t\t', value, 'to:', parsedResults[key]);
+            console.log('CONVERTED:\t', value, '\tto:', parsedResults[key]);
         };
 
     });

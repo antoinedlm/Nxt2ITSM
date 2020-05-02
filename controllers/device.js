@@ -10,6 +10,7 @@ const scoresPath = path.join(utils.rootDir, 'scores');
 var scoresList;
 var scoresContent;
 var devicesList = {};
+var properties = nxtAPI.convertedProp();
 
 const parseScores = () => {
     console.log('Parsing scores...');
@@ -69,12 +70,13 @@ exports.getDevice = async (req, res) => {
         .then((response) => {
             console.log('NXQL query results:');
             console.table(response.data[0]);
-            var parsed = nxtAPI.parseResults(response.data[0], scoresContent, normalizations, config.properties);
+            var parsed = nxtAPI.parseResults(response.data[0], scoresContent, normalizations, properties);
             res.render('device', {
                 deviceName: deviceName,
                 engine: engine,
                 scores: scoresContent,
                 config: config,
+                properties: properties,
                 payload: parsed
             });
         })
@@ -96,12 +98,13 @@ exports.getScore = async (req, res) => {
         .then((response) => {
             console.log('NXQL query results:');
             console.table(response.data[0]);
-            var parsed = nxtAPI.parseResults(response.data[0], scoresContent, normalizations, config.properties);
+            var parsed = nxtAPI.parseResults(response.data[0], scoresContent, normalizations, properties);
             res.render('device', {
                 deviceName: deviceName,
                 engine: engine,
                 scores: [scoresContent[scoreName]],
                 config: config,
+                properties: properties,
                 payload: parsed
             });
         })

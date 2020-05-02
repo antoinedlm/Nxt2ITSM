@@ -117,7 +117,7 @@ If you wish to add dynamic field (category, remote action results), the format s
 - __nxql_field_type__ is the type of the field in the nxql datamodel
 - __dynamic field__ is the name of the dynamic field
 
-To find the right format for a __dynamic fields__, use the nxql editor and run the following query:
+To find the right format for a __dynamic field__, use the nxql editor and run the following query:
 ```
 (select #"" (from device))
 ```
